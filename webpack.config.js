@@ -14,6 +14,7 @@ module.exports = (_, { mode, watch }) => {
       config.entry =  ['webpack/hot/poll?100', './src/main.ts'],
       config.externals = nodeExternals({ whitelist: ['webpack/hot/poll?100']}),
       config.plugins = [
+        ...config.plugins,
         new webpack.HotModuleReplacementPlugin(),
         new StartServerPlugin({
           name: 'main.js',

@@ -1,4 +1,5 @@
 import express from 'express';
+import acceptHMR from './utils/acceptHMR';
 
 declare const module: any;
 
@@ -13,7 +14,6 @@ const server = app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 });
 
-if (module.hot) {
-  module.hot.accept();
-  module.hot.dispose(() => server.close());
-}
+acceptHMR(module, server);
+
+export default server;
