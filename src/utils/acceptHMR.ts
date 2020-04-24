@@ -1,4 +1,4 @@
-import { Server } from "http";
+import { Server } from 'http';
 
 export default (mod: NodeModule, server: Server): void => {
   if (mod.hot) {
